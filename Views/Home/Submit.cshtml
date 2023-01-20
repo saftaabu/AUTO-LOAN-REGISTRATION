@@ -1,0 +1,69 @@
+﻿@model Proj3_Aftaabuddin.Models.RegistrationViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="text-center">
+    <img src="~/lib/logo.png" alt="Logo" />
+    <style>
+
+        body {
+            background-color: #ffcccc;
+        }
+    </style>
+    <h1 class="display-4">Welcome to AutoCarLoan Registration </h1>
+</div>
+
+<h2>Thank you for filling out the application form!</h2>
+<br/>
+<strong>Loan Type:</strong> @Model.UserInfo.MyOption
+<br />
+<strong>
+    Name :
+</strong>@Model.UserInfo.Name
+    <br />
+    <strong>
+        Address:
+    </strong> @Model.UserInfo.Address
+        <br />
+        <strong>
+            City :
+        </strong> @Model.UserInfo.City
+            <br />
+            <strong>
+                State :
+            </strong> @Model.UserInfo.State
+                <br />
+                <strong>
+                    Zip Code :
+                </strong> @Model.UserInfo.Zip
+                    <br />
+                    <strong>
+                        Yearly Salary :
+                    </strong>@Model.UserInfo.YearlySalary
+                        <br />
+                        <strong>
+                            User Name :
+                        </strong> @Model.UserInfo.Username
+                            <br />
+                                    <strong>
+                                        First Time Applying for a car loan? :
+                                    </strong> @Model.UserInfo.FirstTime
+                                        <br />
+                                        <strong>
+                                            Would you like to be contacted by the dealership? (Y/N):
+                                        </strong> @Model.UserInfo.dealerContact
+                                            <br />
+                                            <strong>
+                                                Would you like to receive newsletter from our dealership (Y/N):
+                                            </strong> @Model.UserInfo.Newsletter
+                                                <br />
+                                                <strong>
+                                                    Registered On:
+                                                </strong>@Model.UserInfo.RegistrationDate.ToString()
+                                                    <br />
+                                                    <strong>
+                                                        Client Info:
+                                                    </strong>@Model.ClientInfo
+                                                        <br />

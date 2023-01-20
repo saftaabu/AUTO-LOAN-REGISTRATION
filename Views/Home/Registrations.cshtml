@@ -1,0 +1,56 @@
+﻿@model List<Proj3_Aftaabuddin.Models.RegisteredUser>
+
+@if (Model != null && Model.Count > 0)
+{
+
+    <form method="get" action="/Home/Registrations">
+        <input type="text" id="filter" name="filter" value="@ViewBag.Filter" />
+        <input type="submit" value="Filter" class="btn btn-dark" />
+    </form>
+    <br />
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Loan Type</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Yearly Salary</th>
+                <th>User Name</th>
+                <th>First time applying for a car loan?</th>
+                <th>Would you like to receive newsletter from our dealership (Y/N)</th>
+                <th>Would you like to be contacted by the dealership? (Y/N)</th>
+                <th>Registration On</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reg in Model)
+            {
+            <tr>
+                <td>@reg.MyOption</td>
+                <td>@reg.Name</td>
+                <td>@reg.Address</td>
+                <td>@reg.City </td>
+                <td>@reg.State</td>
+                <td>@reg.Zip</td>
+                <td>@reg.YearlySalary</td>
+                <td>@reg.Username </td>
+                <td>@reg.FirstTime </td>
+                <td>@reg.Newsletter </td>
+                <td>@reg.dealerContact</td>
+                <td>@reg.RegistrationDate.ToShortDateString()</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <p> No Registrations to display.</p>
+}
+

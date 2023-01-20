@@ -1,0 +1,98 @@
+﻿@model Proj3_Aftaabuddin.Models.RegisteredUser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <img src="~/lib/logo.png" alt="Logo" />
+    <style>
+        body {
+            background-color: #ffcccc;
+        }
+    </style>
+    <h1 class="display-4">Welcome to AutoCarLoan Registration </h1>
+</div>
+
+@using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+{
+    //Application form
+    <h2>APPLICATION FORM</h2>
+    <p style="font-weight: bold;"> LOAN TYPE: </p>
+    <select id="selOptions" name="MyOption">
+        <option>New Car</option>
+        <option>Used Car</option>
+
+    </select>                
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+            <td>@Html.ValidationMessageFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>@Html.TextBoxFor(m => m.Address)</td>
+            <td>@Html.ValidationMessageFor(m => m.Address)</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>@Html.TextBoxFor(m => m.City) </td>
+            <td>@Html.ValidationMessageFor(m => m.City)</td>
+        </tr>
+
+        <tr>
+            <th>Zip Code</th>
+            <td>@Html.TextBoxFor(m => m.Zip) </td>
+            <td>@Html.ValidationMessageFor(m => m.Zip)</td>
+        </tr>
+
+        <tr>
+            <th>State</th>
+            <td>@Html.TextBoxFor(m => m.State) </td>
+            <td>@Html.ValidationMessageFor(m => m.State)</td>
+        </tr>
+        <tr>
+
+            <th>Yearly Salary </th>
+            <td>@Html.TextBoxFor(m => m.YearlySalary)</td>
+            <td>@Html.ValidationMessageFor(m => m.YearlySalary)</td>
+        </tr>
+        <tr>
+            <th>User Name</th>
+            <td>@Html.TextBoxFor(m => m.Username) </td>
+            <td>@Html.ValidationMessageFor(m => m.Username)</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>@Html.PasswordFor(m => m.Password) </td>
+            <td>@Html.ValidationMessageFor(m => m.Password)</td>
+        </tr>
+        <tr>
+            <th>Confirm Password</th>
+            <td>@Html.PasswordFor(m => m.PasswordConfirm) </td>
+            <td>@Html.ValidationMessageFor(m => m.PasswordConfirm)</td>
+        </tr>
+        <tr>
+            <th>First Time Applying for a car loan?</th>
+            <td> Yes @Html.RadioButtonFor(m => m.FirstTime, "Yes", new { Checked = "checked" }) </td>
+            <td> No @Html.RadioButtonFor(m => m.FirstTime, "No", new { Checked = "checked" }) </td>
+            <td>@Html.ValidationMessageFor(m => m.FirstTime)</td>
+        </tr>
+        <tr>
+            <th>Would you like to be contacted by the dealership? (Y/N)</th>
+            <td>@Html.CheckBoxFor(m => m.dealerContact) </td>
+            <td>@Html.ValidationMessageFor(m => m.dealerContact)</td>
+        </tr>
+        <tr>
+            <th>Would you like to receive newsletter from our dealership (Y/N)</th>
+            <td>@Html.CheckBoxFor(m => m.Newsletter) </td>
+            <td>@Html.ValidationMessageFor(m => m.Newsletter)</td>
+        </tr>
+
+    </table>
+    //submit button
+    <input Type="Submit" value="Register" class="btn btn-success" />
+
+
+
+}
